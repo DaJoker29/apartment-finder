@@ -91,4 +91,5 @@ ENV/
 # Project specific
 .idea/
 private.py
-listings.db
+gigs.db
+src
