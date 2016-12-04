@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from scraper import do_scrape
 import settings
 import time
