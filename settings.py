@@ -3,7 +3,8 @@ import os
 SITES = {
   'sfbay': ["eby", "sfc", "sby", "nby", "pen", "scz"],
   'losangeles': ["wst", "sfv", "lac", "sgv", "lgb", "ant"],
-  'sandiego': ["csd", "nsd", "esd", "ssd"]
+  'sandiego': ["csd", "nsd", "esd", "ssd"],
+  'newyork': ["mnh", "brk", "que", "brx", "stn", "jsy", "lgi", "wch", "fct"]
 }
 
 # The Craigslist section underneath housing that you want to search in.
