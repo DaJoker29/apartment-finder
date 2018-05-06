@@ -89,7 +89,7 @@ def do_scrape(site, areas):
     for area in areas:
         all_results += scrape_area(site, area)
 
-    print("{}: Got {} results".format(time.ctime(), len(all_results)))
+    print("{}: Got {} results -- {}".format(time.ctime(), len(all_results), site))
 
     # Post each result to slack.
     for result in all_results:
