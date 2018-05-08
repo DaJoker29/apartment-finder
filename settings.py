@@ -3,8 +3,6 @@ import os
 SITES = {
   'sfbay': ["eby", "sfc", "sby", "nby", "pen", "scz"],
   'losangeles': ["wst", "sfv", "lac", "sgv", "lgb", "ant"],
-  'sandiego': ["csd", "nsd", "esd", "ssd"],
-  'newyork': ["mnh", "brk", "que", "brx", "stn", "jsy", "lgi", "wch", "fct"]
 }
 
 # The Craigslist section underneath housing that you want to search in.
@@ -12,6 +10,7 @@ SITES = {
 # https://sfbay.craigslist.org/search/sub finds sublets.
 # You only need the last 3 letters of the URLs.
 CRAIGSLIST_CATEGORY = 'cpg'
+CATEGORIES = ["cpg", "web"]
 
 ## System settings
 

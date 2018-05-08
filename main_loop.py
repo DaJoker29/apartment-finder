@@ -11,10 +11,10 @@ if __name__ == "__main__":
     print("{}: Starting scrape cycle".format(time.ctime()))
     try:
         sc = SlackClient(settings.SLACK_TOKEN)
-        sc.api_call("chat.postMessage", channel=settings.SLACK_CHANNEL, text="Running scraper...", username='pybot', icon_emoji=':robot_face:')
 
-        for key in settings.SITES:
-            do_scrape(key, settings.SITES[key])
+        for category in settings.CATEGORIES:
+            for key in settings.SITES:
+                do_scrape(key, settings.SITES[key], category)
     except KeyboardInterrupt:
         print("Exiting....")
         sys.exit(1)

@@ -32,14 +32,14 @@ Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-def scrape_area(site, area):
+def scrape_area(site, area, category):
     """
     Scrapes craigslist for a certain geographic area, and finds the latest listings.
     :param area:
     :return: A list of results.
     """
-    cl_h = CraigslistGigs(site=site, area=area, category=settings.CRAIGSLIST_CATEGORY,
-                             filters={'is_paid': 'yes', 'query': 'website'})
+    cl_h = CraigslistGigs(site=site, area=area, category=category,
+                             filters={'query': 'website'})
 
     results = []
     gen = cl_h.get_results(sort_by='newest', limit=20)
@@ -76,7 +76,7 @@ def scrape_area(site, area):
 
     return results
 
-def do_scrape(site, areas):
+def do_scrape(site, areas, category):
     """
     Runs the craigslist scraper, and posts data to slack.
     """
@@ -87,7 +87,7 @@ def do_scrape(site, areas):
     # Get all the results from craigslist.
     all_results = []
     for area in areas:
-        all_results += scrape_area(site, area)
+        all_results += scrape_area(site, area, category)
 
     print("{}: Got {} results -- {}".format(time.ctime(), len(all_results), site))
 
